@@ -30,6 +30,11 @@ class MyApp extends StatelessWidget {
               child: Text("Flutter Demo Home Page"),
             ),
             Builder(builder: (context) {
+              // If you try to use Navigator.pushNamed(context, ...) in some places,
+              // the context might refer to the wrong part of the widget tree. For example,
+              // it might not have access to the Navigator or other inherited widgets (like a Scaffold).
+              // By wrapping the ElevatedButton in a Builder, you ensure that the context passed to
+              // Navigator.pushNamed is the correct one, where a Navigator is actually available in the widget tree.
               return ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, AuthScreen.routeName);
