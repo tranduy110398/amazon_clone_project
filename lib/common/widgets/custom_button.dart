@@ -21,7 +21,10 @@ class CustomButton extends StatelessWidget {
                 0), // Set border radius to 0 for a perfect square
           ),
         ),
-        child: Text(text),
+        child: Text(
+          text,
+          style: const TextStyle(fontSize: 18),
+        ),
       ),
     );
   }
