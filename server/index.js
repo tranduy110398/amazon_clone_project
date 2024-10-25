@@ -9,11 +9,20 @@ const DB = "mongodb+srv://tranduy:Z8UHx5k-k6_vkeu@cluster0.udmc1eg.mongodb.net/?
 
 const authRouter = require("./routes/auth")
 
-// MIDDLEWARE
-// Middleware manipulates the data that we are sending
-// CLIENT -> middleware -> SERVER -> SERVER -> STOP
+
 app.use(express.json());
+// Parsing Incoming Data
+// Use Cases: If your application needs to accept JSON, URL-encoded form data, raw text, or file uploads, 
+// middleware will make it easier to parse and access this data in req.body.
+// Middleware: express.json() for JSON, express.urlencoded() for form data, or multer for file uploads.
+
 app.use(authRouter);
+// Organizing Routes
+// Use Cases: To keep your code modular, especially in larger applications where 
+// you want to separate routes into different files.
+// Global, general middleware (e.g., parsers, logging) belongs in index.js or app.js
+
+
 
 mongoose.connect(DB).then(() => {
     console.log("Connection successful!");

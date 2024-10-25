@@ -25,7 +25,9 @@ class CustomTextfield extends StatelessWidget {
           ),
           hintText: hintText,
         ),
-        validator: (val) {},
+        validator: (val) {
+          return null;
+        },
       ),
     );
   }
